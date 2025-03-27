@@ -8,9 +8,10 @@ services:
       POSTGRES_PASSWORD: jhordan123
       POSTGRES_DB: portafolio_db
     ports:
-      - "5433:5432"
+      - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./db-init:/docker-entrypoint-initdb.d  # Montar scripts SQL
 
 volumes:
   postgres_data:
